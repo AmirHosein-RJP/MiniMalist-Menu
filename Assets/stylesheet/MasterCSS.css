@@ -1,0 +1,160 @@
+*{
+    margin: 0;padding: 0;box-sizing: border-box;
+}
+@font-face {
+    font-family: main;
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: mainthin;
+    src: url(../fonts/Poppins-Thin.ttf);
+}
+@font-face {
+    font-family: paragraph;
+    src: url(../fonts/ChakraPetch-Regular.ttf);
+}
+@font-face {
+    font-family: ZenKakuGothicNew;
+    src: url(../fonts/ZenKakuGothicNew-Regular.ttf);
+}
+main{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: none;
+    user-select: none;
+    >.mouseCursor{
+        position: fixed;
+        z-index: 10000000000;
+        transform: translate(3%,3%);
+        user-select: none;
+    }
+    >section{
+        height: 100%;
+        width: 50%;
+        /* border: 1px solid red; */
+        &:nth-of-type(1){
+            padding-inline: 4%;
+            display: flex;
+            align-items: center;
+            >span{
+                position: fixed;
+                left: 4%;
+                top: 5%;
+                >span{
+                    font-family: paragraph;
+                    font-size: 18px;
+                }
+                >div{
+                    >a{
+                        margin-inline: 10px;
+                        cursor: none;
+                        >i{
+                            margin-top: 10px;
+                            color: black;
+                            text-decoration: none;
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+            >div{
+                min-height: 300px;
+                width: 100%;
+                /* border: 1px solid blue; */
+                >.title{
+                    width: 100%;
+                    padding-block: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    >h1{
+                        font-family: main;
+                        font-weight: bolder;
+                        color: black;
+                        font-size: 50px;
+                        font-style: normal;
+                        margin-left: 5px;
+                        text-transform: capitalize;
+                    }
+                    >span{
+                        font-family: ZenKakuGothicNew;
+                        color: #BFBC86;
+                        font-size: 40px;
+                        margin-right: 5px;
+                    }
+                }
+                >.accordion{
+                    width: 100%;
+                    >div{
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        >.title{
+                            width: 100%;
+                            padding-block: 15px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            border-top: 1px solid #222222;
+                            >h2{
+                                font-family: paragraph;
+                                font-size: 35px;
+                                color: #222222;
+                                font-weight: 500;
+                                text-transform: capitalize;
+                            }
+                            >figure{
+                                width: 40px;
+                                aspect-ratio: 1 / 1;
+                                >img{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        >p{
+                            width: 100%;
+                            padding-block: 15px;
+                            font-family: main;
+                            font-size: 18px;
+                            overflow: hidden;
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+        &:nth-of-type(2){
+            padding-inline: 6%;
+            >.frame{
+                width: 100%;
+                height: 100%;
+                position: relative;
+                >.background{
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                    z-index: 1;
+                    >img{
+                        width: 100%;
+                        transform-origin: bottom;
+                    }
+                }
+                >.mainIMGs{
+                    position: absolute;
+                    z-index: 100;
+                    left: 0;
+                    bottom: 0;
+                    >img{
+                        width: 100%;
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}
